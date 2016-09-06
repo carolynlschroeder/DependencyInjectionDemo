@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DependencyInjectionDemo.Entities;
+using DependencyInjectionDemo.Repositories;
+using DependencyInjectionDemo.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +32,12 @@ namespace DependencyInjectionDemo
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddTransient<IStaffRepository, StaffRepository>();
+            services.AddTransient<IOperationTransient, Operation>();
+            services.AddScoped<IOperationScoped, Operation>();
+            services.AddSingleton<IOperationSingleton, Operation>();
+            services.AddTransient<OperationService, OperationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,20 @@
+﻿@using DependencyInjectionDemo.Services
+@{
+    ViewBag.Title = "Operations";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<span>Controller Operations</span>
+<ul>
+    <li><strong>Transient: </strong>@ViewBag.TransientId.ToString()</li>
+    <li><strong>Scoped: </strong>@ViewBag.ScopedId.ToString()</li>
+    <li><strong>Singleton: </strong>@ViewBag.SingletonId.ToString()</li>
+</ul>
+
+<span>Operation Services Operations</span>
+<ul>
+    <li><strong>Transient: </strong>@ViewBag.Service.TransientOperation.OperationId</li>
+    <li><strong>Scoped: </strong>@ViewBag.Service.ScopedOperation.OperationId</li>
+    <li><strong>Singleton: </strong>@ViewBag.Service.SingletonOperation.OperationId</li>
+</ul>
