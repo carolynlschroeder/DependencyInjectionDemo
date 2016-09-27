@@ -37,7 +37,7 @@ namespace DependencyInjectionDemo
             services.AddTransient<IOperationTransient, Operation>();
             services.AddScoped<IOperationScoped, Operation>();
             services.AddSingleton<IOperationSingleton, Operation>();
-            services.AddTransient<OperationService, OperationService>();
+            services.AddTransient<OperationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
